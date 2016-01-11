@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+import re
 
 def listar(nomes):
     print ('Listando Nomes: ')
@@ -32,6 +33,13 @@ def procurar(nomes):
         print('Nome encontrado com sucesso')
     else:
         print('Nome nao existe')
+
+def procurar_regex(nomes):
+    print('Digite a expressao regular')
+    regex = raw_input()
+    nomes_concatenados = ' '.join(nomes)
+    print(nomes_concatenados)
+    resultados = re.findall(r'([Felipe]\w+)', nomes_concatenados)
 
 def menu ( ):
     nomes = []

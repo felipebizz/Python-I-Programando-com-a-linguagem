@@ -6,7 +6,6 @@ def listar(nomes):
     for nome in nomes:
         print(nome)
 
-
 def cadastrar (nomes) :
     print ('Digite seu Nome :')
     nome = raw_input()
@@ -35,11 +34,13 @@ def procurar(nomes):
         print('Nome nao existe')
 
 def procurar_regex(nomes):
+    #r'([Felipe]\w+)'
     print('Digite a expressao regular')
     regex = raw_input()
     nomes_concatenados = ' '.join(nomes)
     print(nomes_concatenados)
-    resultados = re.findall(r'([Felipe]\w+)', nomes_concatenados)
+    resultados = re.findall(regex, nomes_concatenados)
+    print resultados
 
 def menu ( ):
     nomes = []
@@ -50,6 +51,7 @@ def menu ( ):
         print ('Digite 3 para remover')
         print ('Digite 4 para alterar')
         print ('Digite 5 para procurar')
+        print ('Digite 6 para procurar pela regex')
         print ('Digite 0 para terminar')
 
         escolha =  raw_input()
@@ -64,5 +66,7 @@ def menu ( ):
             alterar(nomes)
         if(escolha == '5'):
             procurar(nomes)
+        if(escolha == '6'):
+            procurar_regex(nomes)
 
 menu()

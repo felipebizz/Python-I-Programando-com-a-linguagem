@@ -8,5 +8,5 @@ class Pessoa():
         self.altura = altura
 
     def imprime_imc(self):
-        imc = (self.peso / (self.altura * self.altura))
+        imc = (self.peso / (self.altura ** 2))
         print(" %s,  seu IMC é: %s" % (self.nome, imc))
